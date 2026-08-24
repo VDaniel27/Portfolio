@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#hero">VO</a>
+        <button class="navbar-toggler" type="button" @onclick="ToggleNav">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="@NavClass">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#sobre-mi" @onclick="ToggleNav">@(Lang.IsEnglish ? "About" : "Sobre mí")</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experiencia" @onclick="ToggleNav">@(Lang.IsEnglish ? "Experience" : "Experiencia")</a></li>
+                <li class="nav-item"><a class="nav-link" href="#habilidades" @onclick="ToggleNav">@(Lang.IsEnglish ? "Skills" : "Habilidades")</a></li>
+                <li class="nav-item"><a class="nav-link" href="#proyectos" @onclick="ToggleNav">@(Lang.IsEnglish ? "Projects" : "Proyectos")</a></li>
+                <li class="nav-item"><a class="nav-link" href="#educacion" @onclick="ToggleNav">@(Lang.IsEnglish ? "Education" : "Educación")</a></li>
+                <li class="nav-item"><a class="nav-link btn-contact" href="#contacto" @onclick="ToggleNav">@(Lang.IsEnglish ? "Contact" : "Contacto")</a></li>
+                <li class="nav-item">
+                    <button class="btn-lang" @onclick="ToggleLang" title="Switch language">
+                        @(Lang.IsEnglish ? "🇲🇽 ES" : "🇺🇸 EN")
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    [Inject] LanguageService Lang { get; set; } = default!;
+
+    private bool collapsed = true;
+    private string NavClass => collapsed ? "navbar-collapse collapse" : "navbar-collapse";
+    private void ToggleNav() => collapsed = !collapsed;
+
+    private void ToggleLang()
+    {
+        Lang.Toggle();
+        collapsed = true;
+    }
+
+    protected override void OnInitialized()
+    {
+        Lang.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        Lang.OnChange -= StateHasChanged;
+    }
+}

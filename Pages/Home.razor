@@ -1,0 +1,326 @@
+@page "/"
+@inject Portfolio.Services.LanguageService Lang
+@implements IDisposable
+
+<PageTitle>Victor Ortiz | Software Engineer</PageTitle>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-content">
+        <p class="hero-greeting">@(Lang.IsEnglish ? "Hi, I'm" : "Hola, soy")</p>
+        <h1>Victor Daniel Ortiz Garcia</h1>
+        <h2>Jr. Software Engineer <span class="divider">|</span> IT Support Engineer</h2>
+        <p class="hero-summary">
+            @if (Lang.IsEnglish)
+            {
+                <text>Software Engineer specialized in Full-stack architecture and API design.
+                Experience delivering scalable solutions for international organizations.</text>
+            }
+            else
+            {
+                <text>Ingeniero de Software especializado en arquitectura Full-stack y diseño de APIs.
+                Experiencia entregando soluciones escalables para organizaciones internacionales.</text>
+            }
+        </p>
+        <div class="hero-links">
+            <a href="mailto:victorortiz.vg@hotmail.com" class="btn-primary-outline"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/vdortiz/" target="_blank" class="btn-primary-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/VDaniel27" target="_blank" class="btn-primary-outline"><i class="fab fa-github"></i> GitHub</a>
+            @if (Lang.IsEnglish)
+            {
+                <a href="resources/cv/Resume_Victor_Danie_Ortiz_Garcia.pdf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
+            }
+            else
+            {
+                <a href="resources/cv/CV_Victor_Daniel_Ortiz_Garcia.pdf" download class="btn-download"><i class="fas fa-download"></i> Descargar CV</a>
+            }
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <a href="#sobre-mi"><i class="fas fa-chevron-down"></i></a>
+    </div>
+</section>
+
+<!-- SOBRE MÍ / ABOUT -->
+<section id="sobre-mi" class="section">
+    <div class="container">
+        <h3 class="section-title">@(Lang.IsEnglish ? "About Me" : "Sobre mí")</h3>
+        <div class="about-grid animate-on-scroll">
+            <div class="about-avatar">
+                <img src="resources/img/avatar.jpg" alt="Victor Ortiz" class="avatar-img" />
+            </div>
+            <div class="about-text">
+                @if (Lang.IsEnglish)
+                {
+                    <p>Software Engineer with solid experience in the web application development lifecycle and data processing. Specialized in Full-stack architecture and API design.</p>
+                    <p>Proven experience working autonomously for international organizations, solving technical problems through efficient code and strategic use of AI tools. Demonstrated ability to collaborate in high-demand corporate environments and deliver scalable solutions.</p>
+                }
+                else
+                {
+                    <p>Ingeniero de Software con sólida experiencia en el ciclo de vida de desarrollo de aplicaciones web y procesamiento de datos. Especializado en arquitectura Full-stack y diseño de APIs.</p>
+                    <p>Experiencia demostrada trabajando de forma autónoma para organizaciones internacionales, resolviendo problemas técnicos mediante código eficiente y el uso estratégico de herramientas de IA. Capacidad probada para colaborar en entornos corporativos de alta exigencia y entregar soluciones escalables.</p>
+                }
+                <div class="about-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Puebla, México</span>
+                    <span><i class="fab fa-whatsapp"></i> <a href="https://wa.me/522211124385" target="_blank">WhatsApp</a></span>
+                    <span><i class="fas fa-language"></i> @(Lang.IsEnglish ? "Native Spanish · Intermediate English" : "Español nativo · Inglés intermedio")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCIA / EXPERIENCE -->
+<section id="experiencia" class="section section-alt">
+    <div class="container">
+        <h3 class="section-title">@(Lang.IsEnglish ? "Work Experience" : "Experiencia Laboral")</h3>
+        <div class="timeline">
+
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h4>@(Lang.IsEnglish ? "Full-stack Developer (Freelance)" : "Desarrollador Full-stack (Freelance)")</h4>
+                            <p class="company"><i class="fas fa-building"></i> Médicos Sin Fronteras (MSF)</p>
+                        </div>
+                        <span class="badge-date">@(Lang.IsEnglish ? "Aug 2025 – Apr 2026" : "Ago 2025 – Abr 2026")</span>
+                    </div>
+                    @if (Lang.IsEnglish)
+                    {
+                        <ul>
+                            <li>Led development of a web platform for donation management and corporate outreach.</li>
+                            <li>Designed and implemented a RESTful API with over 150 endpoints.</li>
+                            <li>Built responsive interfaces using JavaScript and Bootstrap.</li>
+                            <li>Managed MySQL databases and deployed to production environments.</li>
+                        </ul>
+                        <div class="achievement"><i class="fas fa-trophy"></i> Automated processes that significantly reduced the manual workload of the finance team.</div>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li>Liderazgo en el desarrollo de una plataforma web para gestión de donativos y vinculación empresarial.</li>
+                            <li>Diseño e implementación de una API RESTful con más de 150 endpoints.</li>
+                            <li>Desarrollo de interfaces responsivas con JavaScript y Bootstrap.</li>
+                            <li>Gestión de bases de datos MySQL y despliegue en entornos de producción.</li>
+                        </ul>
+                        <div class="achievement"><i class="fas fa-trophy"></i> Automatización de procesos que redujeron significativamente la carga de trabajo manual del equipo de finanzas.</div>
+                    }
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h4>@(Lang.IsEnglish ? "Software Development Intern" : "Practicante de Desarrollo de Software")</h4>
+                            <p class="company"><i class="fas fa-building"></i> T-Systems México (Automotive)</p>
+                        </div>
+                        <span class="badge-date">@(Lang.IsEnglish ? "Jan 2024 – Apr 2024" : "Ene 2024 – Abr 2024")</span>
+                    </div>
+                    @if (Lang.IsEnglish)
+                    {
+                        <ul>
+                            <li>Developed PL/SQL scripts for extraction and structuring of operational data (VW Project).</li>
+                            <li>Automated generation of ticket files and service control for fleet users.</li>
+                            <li>Identified data inconsistencies in Oracle SQL Developer environments.</li>
+                            <li>Technical documentation under international automotive industry standards.</li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li>Desarrollo de scripts en PL/SQL para extracción y estructuración de datos operativos (Proyecto VW).</li>
+                            <li>Generación automatizada de archivos de tickets y control de servicios para usuarios de flota.</li>
+                            <li>Identificación de inconsistencias de datos en entornos Oracle SQL Developer.</li>
+                            <li>Documentación técnica bajo estándares internacionales de la industria automotriz.</li>
+                        </ul>
+                    }
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h4>@(Lang.IsEnglish ? "Software Developer (Professional Internship)" : "Desarrollador de Software (Estadía Profesional)")</h4>
+                            <p class="company"><i class="fas fa-building"></i> Mulliert S.A. de C.V.</p>
+                        </div>
+                        <span class="badge-date">@(Lang.IsEnglish ? "May 2022 – Aug 2022" : "May 2022 – Ago 2022")</span>
+                    </div>
+                    @if (Lang.IsEnglish)
+                    {
+                        <ul>
+                            <li>Built a warehouse and inventory management system using .NET Framework and C#.</li>
+                            <li>Implemented PDF document generation and automatic requisitions.</li>
+                            <li>Designed and optimized database schemas in SQL Server.</li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li>Creación de un sistema de gestión de almacén e inventarios con .NET Framework y C#.</li>
+                            <li>Implementación de generación de documentos PDF y requisiciones automáticas.</li>
+                            <li>Diseño y optimización de esquemas de bases de datos en SQL Server.</li>
+                        </ul>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HABILIDADES / SKILLS -->
+<section id="habilidades" class="section">
+    <div class="container">
+        <h3 class="section-title">@(Lang.IsEnglish ? "Skills" : "Habilidades")</h3>
+        <div class="skills-grid">
+            <div class="skill-category animate-on-scroll">
+                <h5><i class="fas fa-code"></i> Frontend</h5>
+                <div class="tags">
+                    <span><i class="fab fa-js-square"></i> JavaScript</span>
+                    <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                    <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                    <span><i class="fab fa-microsoft"></i> Blazor</span>
+                </div>
+            </div>
+            <div class="skill-category animate-on-scroll">
+                <h5><i class="fas fa-server"></i> Backend</h5>
+                <div class="tags">
+                    <span><i class="fab fa-microsoft"></i> C#</span>
+                    <span><i class="fab fa-microsoft"></i> .NET</span>
+                    <span><i class="fas fa-plug"></i> REST APIs</span>
+                    <span><i class="fas fa-database"></i> PL/SQL</span>
+                </div>
+            </div>
+            <div class="skill-category animate-on-scroll">
+                <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Databases" : "Bases de Datos")</h5>
+                <div class="tags">
+                    <span><i class="fas fa-fish"></i> MySQL</span>
+                    <span><i class="fab fa-microsoft"></i> SQL Server</span>
+                    <span><i class="fas fa-database"></i> Oracle</span>
+                </div>
+            </div>
+            <div class="skill-category animate-on-scroll">
+                <h5><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Tools" : "Herramientas")</h5>
+                <div class="tags">
+                    <span><i class="fab fa-git-alt"></i> Git</span>
+                    <span><i class="fab fa-github"></i> GitHub</span>
+                    <span><i class="fas fa-table"></i> SQL Developer</span>
+                    <span><i class="fas fa-robot"></i> @(Lang.IsEnglish ? "AI Tools" : "IA Tools")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROYECTOS / PROJECTS -->
+<section id="proyectos" class="section section-alt">
+    <div class="container">
+        <h3 class="section-title">@(Lang.IsEnglish ? "Projects" : "Proyectos")</h3>
+        <div class="projects-grid">
+
+            <div class="project-card animate-on-scroll">
+                <div class="project-header">
+                    <i class="fas fa-folder-open"></i>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
+                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <div class="project-tags">
+                    <span>C#</span><span>.NET</span><span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-scroll">
+                <div class="project-header">
+                    <i class="fas fa-folder-open"></i>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
+                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <div class="project-tags">
+                    <span>JavaScript</span><span>Bootstrap</span><span>REST API</span>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-scroll">
+                <div class="project-header">
+                    <i class="fas fa-folder-open"></i>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
+                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <div class="project-tags">
+                    <span>PL/SQL</span><span>Oracle</span><span>Python</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCACIÓN / EDUCATION -->
+<section id="educacion" class="section">
+    <div class="container">
+        <h3 class="section-title">@(Lang.IsEnglish ? "Education" : "Educación")</h3>
+        <div class="edu-card animate-on-scroll">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <h4>@(Lang.IsEnglish ? "Software Development and Management Engineering" : "Ingeniería en Desarrollo y Gestión de Software")</h4>
+                <p class="company">Universidad Tecnológica de Puebla (UTP)</p>
+                <span class="badge-date">@(Lang.IsEnglish ? "Graduated 2024" : "Graduado 2024")</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO / CONTACT -->
+<section id="contacto" class="section section-alt">
+    <div class="container text-center">
+        <h3 class="section-title">@(Lang.IsEnglish ? "Contact" : "Contacto")</h3>
+        <p class="contact-sub">@(Lang.IsEnglish ? "Have a project in mind? Let's talk." : "¿Tienes un proyecto en mente? Hablemos.")</p>
+        <div class="contact-links animate-on-scroll">
+            <a href="mailto:victorortiz.vg@hotmail.com"><i class="fas fa-envelope"></i> victorortiz.vg@hotmail.com</a>
+            <a href="https://wa.me/522211124385" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.linkedin.com/in/vdortiz/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/VDaniel27" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Victor Daniel Ortiz García · Puebla, México</p>
+</footer>
+
+@code {
+    [Inject] IJSRuntime JS { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        Lang.OnChange += StateHasChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await JS.InvokeVoidAsync("initPortfolio");
+    }
+
+    public void Dispose()
+    {
+        Lang.OnChange -= StateHasChanged;
+    }
+}
