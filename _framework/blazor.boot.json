@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Portfolio",
   "resources": {
-    "hash": "sha256-S0kwdsthILT9XoG9dDew01bZzEzaOHkKuHOzHE/n+E4=",
+    "hash": "sha256-fgPkAK//dZc5Gc5iBUJt6qxvc53N+4efnUNdaciuwtI=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-dexsp+9ih2C28zVhNnPXUbkz2QCq7lHpkyDcmaLl7NQ="
     },
@@ -18,7 +18,7 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "Microsoft.AspNetCore.Components.wasm": "sha256-XzdCxbj1xTK+k7w1dYlY8SNDeefljO0z+Y5X3AclRQ0=",
+      "Microsoft.AspNetCore.Components.wasm": "sha256-/8dWBvt4Ps/I1IrATKJ8CS4L5acRCpvhtICt0h8ahn8=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-VfIOTUKTFT0DttU5YMxCFOwFqxCRQzhKmzSssQY1JWc=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-6O28mYpkOX7nwKWfeR9Rtzpcx9jfwC6g4E1P4ZqjlFA=",
       "Microsoft.Extensions.Configuration.wasm": "sha256-od574rRtVVRJj+24jbl8j3GdQFpxlJOpSx+pEMw1Q18=",
@@ -42,13 +42,13 @@
       "System.Net.Primitives.wasm": "sha256-2oNoWbAp6tVhaiok9s4Vt9gSmOFWr/foLiC/nrc9AsM=",
       "System.Private.Uri.wasm": "sha256-viBUZ2BhlqfLGNb9AO9sXbfvcAtAL3k+GEKbW95U+zA=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-VCdurfLyc3EXiI5ar8n6Xa5605og9g1yDvutLlqSZ64=",
-      "System.Runtime.wasm": "sha256-6T1FeHd713maVGuNqqKrrB9CpOIvZeJnCrJY4v466RA=",
+      "System.Runtime.wasm": "sha256-t4Ca0o0ydROKxx+4OO45jpL3EbF3IKHR9VG2VMlDncI=",
       "System.Text.Encodings.Web.wasm": "sha256-DJoo8t84Zgjx+qQ4rnrSpqdipvZkAoC083qkX+YJtfg=",
       "System.Text.Json.wasm": "sha256-hd0swmXYVCqMFtCPU3a770M5/M1AyBUtiKV15BnbUKc=",
       "System.Text.RegularExpressions.wasm": "sha256-79rD56wmpNJvLcJQhHY1Cy5nfIFTEEwYf0QjBbSgNNE=",
       "System.Threading.wasm": "sha256-ip7e9wGPqhK+rFq0NOlQiUNntT6Cf9XQdoM38XVOSLU=",
       "System.Private.CoreLib.wasm": "sha256-90OlfUz7qIcg7b2RRjVHkI2g6m40OdKlMR5z5wvxtjg=",
-      "Portfolio.wasm": "sha256-e4VFUGAb+rA69pxmAzYduA6Oe/E0EKoTHvtw9jo7dTo="
+      "Portfolio.wasm": "sha256-+0P/w5gMwei8Jozng9M+YKobofA/JqxSykZJ6QtoNu8="
     }
   },
   "cacheBootResources": true,
