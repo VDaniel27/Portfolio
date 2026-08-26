@@ -674,6 +674,20 @@ footer {
 .about-meta a:hover { text-decoration: underline; }
 
 /* PROJECTS */
+.projects-category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.projects-category-title i { color: var(--accent); }
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
