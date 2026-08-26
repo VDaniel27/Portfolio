@@ -305,50 +305,69 @@
 <section id="proyectos" class="section section-alt">
     <div class="container">
         <h3 class="section-title">@(Lang.IsEnglish ? "Projects" : "Proyectos")</h3>
+
+        <!-- Personales / Personal -->
+        <h4 class="projects-category-title">
+            <i class="fas fa-user"></i> @(Lang.IsEnglish ? "Personal" : "Personales")
+        </h4>
         <div class="projects-grid">
 
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
                     <i class="fas fa-folder-open"></i>
                     <div class="project-links">
-                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/VDaniel27/Portfolio" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://vdaniel27.github.io/Portfolio" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
-                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <h4>@(Lang.IsEnglish ? "Personal Portfolio" : "Portafolio Personal")</h4>
+                <p>@(Lang.IsEnglish ? "Personal portfolio website built with Blazor WebAssembly. Features bilingual support, light/dark theme, role switcher and GitHub Pages deployment via GitHub Actions." : "Sitio web de portafolio personal desarrollado con Blazor WebAssembly. Incluye soporte bilingüe, tema claro/oscuro, selector de rol y despliegue en GitHub Pages mediante GitHub Actions.")</p>
                 <div class="project-tags">
-                    <span>C#</span><span>.NET</span><span>MySQL</span>
+                    <span>Blazor</span><span>C#</span><span>GitHub Pages</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Profesionales / Professional -->
+        <h4 class="projects-category-title" style="margin-top: 2.5rem">
+            <i class="fas fa-briefcase"></i> @(Lang.IsEnglish ? "Professional" : "Profesionales")
+        </h4>
+        <div class="projects-grid">
+
+            <div class="project-card animate-on-scroll">
+                <div class="project-header">
+                    <i class="fas fa-folder-open"></i>
+                    <div class="project-links">
+                        <a href="https://www.msf.org.mx" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h4>@(Lang.IsEnglish ? "Donation Management Platform" : "Plataforma de Gestión de Donativos")</h4>
+                <p>@(Lang.IsEnglish ? "Web platform for donation management and corporate outreach for Médicos Sin Fronteras. RESTful API with 150+ endpoints, responsive UI and automated finance workflows." : "Plataforma web para gestión de donativos y vinculación empresarial para Médicos Sin Fronteras. API RESTful con más de 150 endpoints, interfaz responsiva y automatización de procesos financieros.")</p>
+                <div class="project-tags">
+                    <span>JavaScript</span><span>Bootstrap</span><span>REST API</span><span>MySQL</span>
                 </div>
             </div>
 
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
                     <i class="fas fa-folder-open"></i>
-                    <div class="project-links">
-                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
-                    </div>
                 </div>
-                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
-                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <h4>@(Lang.IsEnglish ? "Fleet Service Automation (VW)" : "Automatización de Servicios de Flota (VW)")</h4>
+                <p>@(Lang.IsEnglish ? "PL/SQL scripts for extraction and structuring of operational data for vehicle maintenance reports. Automated ticket file generation for fleet users at T-Systems México." : "Scripts PL/SQL para extracción y estructuración de datos operativos para reportes de mantenimiento vehicular. Generación automatizada de archivos de tickets para usuarios de flota en T-Systems México.")</p>
                 <div class="project-tags">
-                    <span>JavaScript</span><span>Bootstrap</span><span>REST API</span>
+                    <span>PL/SQL</span><span>Oracle</span><span>SQL Developer</span>
                 </div>
             </div>
 
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
                     <i class="fas fa-folder-open"></i>
-                    <div class="project-links">
-                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i></a>
-                    </div>
                 </div>
-                <h4>@(Lang.IsEnglish ? "Project Name" : "Nombre del Proyecto")</h4>
-                <p>@(Lang.IsEnglish ? "Brief project description. What problem it solves and your role." : "Descripción breve del proyecto. Qué problema resuelve y cuál fue tu rol.")</p>
+                <h4>@(Lang.IsEnglish ? "Warehouse Management System" : "Sistema de Gestión de Almacén")</h4>
+                <p>@(Lang.IsEnglish ? "Warehouse and inventory management system built with .NET Framework and C# for Mulliert S.A. de C.V. Includes PDF generation and automatic material requisitions." : "Sistema de gestión de almacén e inventarios desarrollado con .NET Framework y C# para Mulliert S.A. de C.V. Incluye generación de PDFs y requisiciones automáticas de materiales.")</p>
                 <div class="project-tags">
-                    <span>PL/SQL</span><span>Oracle</span><span>Python</span>
+                    <span>C#</span><span>.NET</span><span>SQL Server</span>
                 </div>
             </div>
 
