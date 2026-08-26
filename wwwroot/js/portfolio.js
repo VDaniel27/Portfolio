@@ -13,7 +13,13 @@ window.initPortfolio = () => {
         });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0)
+            el.classList.add('visible');
+        else
+            observer.observe(el);
+    });
 
     // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
