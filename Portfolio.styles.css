@@ -151,19 +151,12 @@ main[b-57rfh191dz] {
     color: white;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 992px) {
     .navbar-toggler[b-jey3l8hr1c] {
         display: none;
     }
 
     .collapse[b-jey3l8hr1c] {
-        /* Never collapse the sidebar for wide screens */
         display: block;
-    }
-    
-    .nav-scrollable[b-jey3l8hr1c] {
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
     }
 }
