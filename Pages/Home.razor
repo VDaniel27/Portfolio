@@ -394,7 +394,12 @@
 
     private int activeRole = 0;
 
-    private void SetRole(int role) => activeRole = role;
+    private async Task SetRole(int role)
+    {
+        await JS.InvokeVoidAsync("resetSkillAnimations");
+        activeRole = role;
+        await JS.InvokeVoidAsync("observeAnimations");
+    }
 
     protected override void OnInitialized()
     {
