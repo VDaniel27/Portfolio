@@ -2,26 +2,53 @@
 @inject Portfolio.Services.LanguageService Lang
 @implements IDisposable
 
-<PageTitle>Victor Ortiz | Software Engineer</PageTitle>
+<PageTitle>Victor Ortiz | @(activeRole == 0 ? "Software Engineer" : "IT Support Engineer")</PageTitle>
 
 <!-- HERO -->
 <section id="hero">
     <div class="hero-content">
         <p class="hero-greeting">@(Lang.IsEnglish ? "Hi, I'm" : "Hola, soy")</p>
         <h1>Victor Daniel Ortiz Garcia</h1>
-        <h2>Jr. Software Engineer <span class="divider">|</span> IT Support Engineer</h2>
+
+        <div class="role-tabs">
+            <button class="role-tab @(activeRole == 0 ? "active" : "")" @onclick="() => SetRole(0)">
+                Jr. Software Engineer
+            </button>
+            <button class="role-tab @(activeRole == 1 ? "active" : "")" @onclick="() => SetRole(1)">
+                IT Support Engineer
+            </button>
+            <div class="role-indicator" style="transform: translateX(@(activeRole == 0 ? "0%" : "100%"))"></div>
+        </div>
+
         <p class="hero-summary">
-            @if (Lang.IsEnglish)
+            @if (activeRole == 0)
             {
-                <text>Software Engineer specialized in Full-stack architecture and API design.
-                Experience delivering scalable solutions for international organizations.</text>
+                @if (Lang.IsEnglish)
+                {
+                    <text>Software Engineer specialized in Full-stack architecture and API design.
+                    Experience delivering scalable solutions for international organizations.</text>
+                }
+                else
+                {
+                    <text>Ingeniero de Software especializado en arquitectura Full-stack y diseño de APIs.
+                    Experiencia entregando soluciones escalables para organizaciones internacionales.</text>
+                }
             }
             else
             {
-                <text>Ingeniero de Software especializado en arquitectura Full-stack y diseño de APIs.
-                Experiencia entregando soluciones escalables para organizaciones internacionales.</text>
+                @if (Lang.IsEnglish)
+                {
+                    <text>IT Support Engineer with experience in L1/L2 technical support, hardware diagnostics,
+                    network maintenance and ticket management in corporate environments.</text>
+                }
+                else
+                {
+                    <text>Ingeniero de Soporte TI con experiencia en soporte técnico L1/L2, diagnóstico de hardware,
+                    mantenimiento de redes y gestión de tickets en entornos corporativos.</text>
+                }
             }
         </p>
+
         <div class="hero-links">
             <a href="mailto:victorortiz.vg@hotmail.com" class="btn-primary-outline"><i class="fas fa-envelope"></i> Email</a>
             <a href="https://www.linkedin.com/in/vdortiz/" target="_blank" class="btn-primary-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -177,43 +204,100 @@
 <section id="habilidades" class="section">
     <div class="container">
         <h3 class="section-title">@(Lang.IsEnglish ? "Skills" : "Habilidades")</h3>
-        <div class="skills-grid">
-            <div class="skill-category animate-on-scroll">
-                <h5><i class="fas fa-code"></i> Frontend</h5>
-                <div class="tags">
-                    <span><i class="fab fa-js-square"></i> JavaScript</span>
-                    <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                    <span><i class="fab fa-html5"></i> HTML/CSS</span>
-                    <span><i class="fab fa-microsoft"></i> Blazor</span>
+
+        @if (activeRole == 0)
+        {
+            <!-- Software Engineer Skills -->
+            <div class="skills-grid">
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-code"></i> Frontend</h5>
+                    <div class="tags">
+                        <span><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span><i class="fab fa-microsoft"></i> Blazor</span>
+                        <span><i class="fab fa-react"></i> Next.js</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-server"></i> Backend</h5>
+                    <div class="tags">
+                        <span><i class="fab fa-microsoft"></i> C#</span>
+                        <span><i class="fab fa-microsoft"></i> .NET</span>
+                        <span><i class="fas fa-plug"></i> REST APIs</span>
+                        <span><i class="fas fa-database"></i> PL/SQL</span>
+                        <span><i class="fab fa-php"></i> PHP</span>
+                        <span><i class="fab fa-python"></i> Python</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Databases" : "Bases de Datos")</h5>
+                    <div class="tags">
+                        <span><i class="fas fa-fish"></i> MySQL</span>
+                        <span><i class="fab fa-microsoft"></i> SQL Server</span>
+                        <span><i class="fas fa-database"></i> Oracle</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Tools" : "Herramientas")</h5>
+                    <div class="tags">
+                        <span><i class="fab fa-git-alt"></i> Git</span>
+                        <span><i class="fab fa-github"></i> GitHub</span>
+                        <span><i class="fas fa-table"></i> SQL Developer</span>
+                        <span><i class="fas fa-robot"></i> @(Lang.IsEnglish ? "AI Tools" : "IA Tools")</span>
+                    </div>
                 </div>
             </div>
-            <div class="skill-category animate-on-scroll">
-                <h5><i class="fas fa-server"></i> Backend</h5>
-                <div class="tags">
-                    <span><i class="fab fa-microsoft"></i> C#</span>
-                    <span><i class="fab fa-microsoft"></i> .NET</span>
-                    <span><i class="fas fa-plug"></i> REST APIs</span>
-                    <span><i class="fas fa-database"></i> PL/SQL</span>
+        }
+        else
+        {
+            <!-- IT Support Skills -->
+            <div class="skills-grid">
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-headset"></i> @(Lang.IsEnglish ? "IT Support" : "Soporte TI")</h5>
+                    <div class="tags">
+                        <span><i class="fas fa-desktop"></i> @(Lang.IsEnglish ? "Hardware Diagnostics" : "Diagnóstico de Hardware")</span>
+                        <span><i class="fas fa-layer-group"></i> @(Lang.IsEnglish ? "L1/L2 Support" : "Soporte Técnico L1/L2")</span>
+                        <span><i class="fas fa-ticket-alt"></i> @(Lang.IsEnglish ? "Ticket Management" : "Gestión de Tickets")</span>
+                        <span><i class="fas fa-network-wired"></i> @(Lang.IsEnglish ? "Network Maintenance" : "Mantenimiento de Redes")</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-code"></i> @(Lang.IsEnglish ? "Scripting & Automation" : "Scripting y Automatización")</h5>
+                    <div class="tags">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span><i class="fab fa-php"></i> PHP</span>
+                        <span><i class="fas fa-database"></i> SQL</span>
+                        <span><i class="fas fa-terminal"></i> PL/SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Databases" : "Bases de Datos")</h5>
+                    <div class="tags">
+                        <span><i class="fas fa-fish"></i> MySQL</span>
+                        <span><i class="fab fa-microsoft"></i> SQL Server</span>
+                        <span><i class="fas fa-database"></i> Oracle</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Tools" : "Herramientas")</h5>
+                    <div class="tags">
+                        <span><i class="fab fa-git-alt"></i> Git</span>
+                        <span><i class="fab fa-github"></i> GitHub</span>
+                        <span><i class="fas fa-table"></i> SQL Developer</span>
+                        <span><i class="fas fa-robot"></i> @(Lang.IsEnglish ? "AI Tools" : "IA Tools")</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h5><i class="fas fa-brain"></i> @(Lang.IsEnglish ? "Soft Skills" : "Habilidades Blandas")</h5>
+                    <div class="tags">
+                        <span><i class="fas fa-tasks"></i> @(Lang.IsEnglish ? "Autonomous Project Management" : "Gestión Autónoma de Proyectos")</span>
+                        <span><i class="fas fa-search"></i> @(Lang.IsEnglish ? "Problem Solving" : "Resolución de Problemas")</span>
+                        <span><i class="fas fa-comments"></i> @(Lang.IsEnglish ? "Async Communication" : "Comunicación Asíncrona")</span>
+                    </div>
                 </div>
             </div>
-            <div class="skill-category animate-on-scroll">
-                <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Databases" : "Bases de Datos")</h5>
-                <div class="tags">
-                    <span><i class="fas fa-fish"></i> MySQL</span>
-                    <span><i class="fab fa-microsoft"></i> SQL Server</span>
-                    <span><i class="fas fa-database"></i> Oracle</span>
-                </div>
-            </div>
-            <div class="skill-category animate-on-scroll">
-                <h5><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Tools" : "Herramientas")</h5>
-                <div class="tags">
-                    <span><i class="fab fa-git-alt"></i> Git</span>
-                    <span><i class="fab fa-github"></i> GitHub</span>
-                    <span><i class="fas fa-table"></i> SQL Developer</span>
-                    <span><i class="fas fa-robot"></i> @(Lang.IsEnglish ? "AI Tools" : "IA Tools")</span>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>
 
@@ -307,6 +391,10 @@
 
 @code {
     [Inject] IJSRuntime JS { get; set; } = default!;
+
+    private int activeRole = 0;
+
+    private void SetRole(int role) => activeRole = role;
 
     protected override void OnInitialized()
     {
