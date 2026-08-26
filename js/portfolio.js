@@ -4,22 +4,7 @@ window.initPortfolio = () => {
         document.body.classList.add('light');
 
     // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                observer.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0)
-            el.classList.add('visible');
-        else
-            observer.observe(el);
-    });
+    window.observeAnimations();
 
     // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
@@ -36,6 +21,31 @@ window.initPortfolio = () => {
     }, { threshold: 0.4 });
 
     sections.forEach(s => navObserver.observe(s));
+};
+
+window.observeAnimations = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0)
+            el.classList.add('visible');
+        else
+            observer.observe(el);
+    });
+};
+
+window.resetSkillAnimations = () => {
+    document.querySelectorAll('#habilidades .animate-on-scroll').forEach(el => {
+        el.classList.remove('visible');
+    });
 };
 
 window.toggleTheme = () => {
