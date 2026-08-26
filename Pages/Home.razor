@@ -393,12 +393,12 @@
     [Inject] IJSRuntime JS { get; set; } = default!;
 
     private int activeRole = 0;
+    private int previousRole = 0;
 
-    private async Task SetRole(int role)
+    private void SetRole(int role)
     {
-        await JS.InvokeVoidAsync("resetSkillAnimations");
+        previousRole = activeRole;
         activeRole = role;
-        await JS.InvokeVoidAsync("observeAnimations");
     }
 
     protected override void OnInitialized()
@@ -409,7 +409,14 @@
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
+        {
             await JS.InvokeVoidAsync("initPortfolio");
+        }
+        else if (activeRole != previousRole)
+        {
+            previousRole = activeRole;
+            await JS.InvokeVoidAsync("observeAnimations");
+        }
     }
 
     public void Dispose()
