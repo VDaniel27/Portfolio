@@ -1,4 +1,8 @@
 window.initPortfolio = () => {
+    // Restore theme
+    if (localStorage.getItem('theme') === 'light')
+        document.body.classList.add('light');
+
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -27,3 +31,11 @@ window.initPortfolio = () => {
 
     sections.forEach(s => navObserver.observe(s));
 };
+
+window.toggleTheme = () => {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    return isLight;
+};
+
+window.isLightTheme = () => document.body.classList.contains('light');
