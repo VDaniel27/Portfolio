@@ -166,6 +166,54 @@ body {
 
 #hero h2 .divider { margin: 0 0.5rem; color: var(--border); }
 
+/* ROLE TABS */
+.role-tabs {
+    position: relative;
+    display: inline-flex;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.role-tab {
+    position: relative;
+    z-index: 1;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.45rem 1.2rem;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: color 0.3s;
+    white-space: nowrap;
+    font-family: var(--font);
+}
+
+.role-tab.active {
+    color: #fff;
+}
+
+body.light .role-tab.active {
+    color: #0f172a;
+}
+
+.role-indicator {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 7px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
 .hero-summary {
     max-width: 600px;
     color: var(--text-muted);
