@@ -1,5 +1,29 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 <NavMenu />
 <main>
     @Body
 </main>
+
+<button class="btn-theme" @onclick="Toggle" title="Toggle theme">
+    <i class="fas @(isLight ? "fa-moon" : "fa-sun")"></i>
+</button>
+
+@code {
+    [Inject] IJSRuntime JS { get; set; } = default!;
+
+    private bool isLight = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            isLight = await JS.InvokeAsync<bool>("isLightTheme");
+            StateHasChanged();
+        }
+    }
+
+    private async Task Toggle()
+    {
+        isLight = await JS.InvokeAsync<bool>("toggleTheme");
+    }
+}
