@@ -24,6 +24,8 @@ window.initPortfolio = () => {
 };
 
 window.observeAnimations = () => {
+    document.querySelectorAll('#habilidades .animate-on-scroll').forEach(el => el.classList.remove('visible'));
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
