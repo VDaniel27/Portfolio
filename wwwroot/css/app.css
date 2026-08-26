@@ -582,6 +582,22 @@ footer {
     .role-tabs {
         width: 100%;
         max-width: 340px;
+        flex-direction: column;
+    }
+
+    .role-indicator {
+        display: none;
+    }
+
+    .role-tab {
+        width: 100%;
+        padding: 0.6rem 1rem;
+        border-radius: 7px;
+        background: rgba(255,255,255,0.05);
+    }
+
+    .role-tab.active {
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
     }
 
     /* Hero */
