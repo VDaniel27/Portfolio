@@ -38,13 +38,17 @@
             {
                 @if (Lang.IsEnglish)
                 {
-                    <text>IT Support Engineer with experience in L1/L2 technical support, hardware diagnostics,
-                    network maintenance and ticket management in corporate environments.</text>
+                    <text>IT Systems &amp; Support Engineer with experience in hardware diagnostics, network configuration,
+                    preventive/corrective maintenance and relational database administration. Proven ability to handle
+                    incidents under SLA, provide remote and on-site support, and produce technical documentation
+                    in high-demand corporate environments.</text>
                 }
                 else
                 {
-                    <text>Ingeniero de Soporte TI con experiencia en soporte técnico L1/L2, diagnóstico de hardware,
-                    mantenimiento de redes y gestión de tickets en entornos corporativos.</text>
+                    <text>Ingeniero de Sistemas y Soporte TI con experiencia en diagnóstico de hardware, configuración de redes,
+                    mantenimiento preventivo/correctivo y administración de bases de datos relacionales. Capacidad probada para la
+                    atención de incidencias bajo SLA, soporte remoto y presencial, y documentación técnica en entornos corporativos
+                    de alta exigencia.</text>
                 }
             }
         </p>
@@ -108,28 +112,50 @@
                 <div class="timeline-card">
                     <div class="timeline-header">
                         <div>
-                            <h4>@(Lang.IsEnglish ? "Full-stack Developer (Freelance)" : "Desarrollador Full-stack (Freelance)")</h4>
+                            <h4>@(activeRole == 0 ? (Lang.IsEnglish ? "Full-stack Developer (Freelance)" : "Desarrollador Full-stack (Freelance)") : (Lang.IsEnglish ? "Systems Engineer (Freelance)" : "Ingeniero de Sistemas (Freelance)"))</h4>
                             <p class="company"><i class="fas fa-building"></i> Médicos Sin Fronteras (MSF)</p>
                         </div>
                         <span class="badge-date">@(Lang.IsEnglish ? "Aug 2025 – Apr 2026" : "Ago 2025 – Abr 2026")</span>
                     </div>
-                    @if (Lang.IsEnglish)
+                    @if (activeRole == 0)
                     {
-                        <ul>
-                            <li>Led the full-cycle development of a web platform for donation management and corporate partnerships.</li>
-                            <li>Designed and implemented a RESTful API with over 150 endpoints, ensuring high security, scalability, and robust data authentication.</li>
-                            <li>Developed dynamic, responsive user interfaces focused on User Experience (UX).</li>
-                            <li>Automated administrative workflows, significantly reducing manual workload for the finance team.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Led the full-cycle development of a web platform for donation management and corporate partnerships.</li>
+                                <li>Designed and implemented a RESTful API with over 150 endpoints, ensuring high security, scalability, and robust data authentication.</li>
+                                <li>Developed dynamic, responsive user interfaces focused on User Experience (UX).</li>
+                                <li>Automated administrative workflows, significantly reducing manual workload for the finance team.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Lideré el desarrollo integral de una plataforma web para la gestión de donativos y vinculación empresarial.</li>
+                                <li>Diseñé e implementé una API RESTful con más de 150 endpoints, garantizando la seguridad, escalabilidad y la correcta autenticación de datos críticos.</li>
+                                <li>Desarrollé interfaces dinámicas y responsivas enfocadas en la experiencia de usuario (UX).</li>
+                                <li>Automaticé flujos de trabajo administrativos que redujeron significativamente la carga de trabajo manual del equipo de finanzas.</li>
+                            </ul>
+                        }
                     }
                     else
                     {
-                        <ul>
-                            <li>Lideré el desarrollo integral de una plataforma web para la gestión de donativos y vinculación empresarial.</li>
-                            <li>Diseñé e implementé una API RESTful con más de 150 endpoints, garantizando la seguridad, escalabilidad y la correcta autenticación de datos críticos.</li>
-                            <li>Desarrollé interfaces dinámicas y responsivas enfocadas en la experiencia de usuario (UX).</li>
-                            <li>Automaticé flujos de trabajo administrativos que redujeron significativamente la carga de trabajo manual del equipo de finanzas.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Managed web infrastructure, APIs and MySQL databases ensuring operational continuity and system availability.</li>
+                                <li>Provided asynchronous technical support and real-time incident resolution for administrative team users.</li>
+                                <li>Automated administrative workflows, significantly reducing response times and manual intervention.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Administré la infraestructura web, APIs y bases de datos MySQL garantizando la continuidad operativa y disponibilidad del sistema.</li>
+                                <li>Brindé soporte técnico asíncrono y resolución de incidencias en tiempo real para usuarios del equipo administrativo.</li>
+                                <li>Automaticé flujos de trabajo administrativos que redujeron significativamente tiempos de atención e intervención manual.</li>
+                            </ul>
+                        }
                     }
                 </div>
             </div>
@@ -139,28 +165,50 @@
                 <div class="timeline-card">
                     <div class="timeline-header">
                         <div>
-                            <h4>@(Lang.IsEnglish ? "Software Development Intern" : "Practicante de Desarrollo de Software")</h4>
+                            <h4>@(activeRole == 0 ? (Lang.IsEnglish ? "Software Development Intern" : "Practicante de Desarrollo de Software") : (Lang.IsEnglish ? "Support & Systems Intern" : "Practicante de Soporte & Sistemas"))</h4>
                             <p class="company"><i class="fas fa-building"></i> T-Systems México (Automotive)</p>
                         </div>
                         <span class="badge-date">@(Lang.IsEnglish ? "Jan 2024 – Apr 2024" : "Ene 2024 – Abr 2024")</span>
                     </div>
-                    @if (Lang.IsEnglish)
+                    @if (activeRole == 0)
                     {
-                        <ul>
-                            <li>Developed optimized PL/SQL scripts for operational data extraction, transformation, and structuring for fleet maintenance reporting (VW Project).</li>
-                            <li>Automated ticket file processing and service tracking for corporate fleet users.</li>
-                            <li>Identified and resolved data inconsistencies across corporate database environments.</li>
-                            <li>Documented key technical processes following automotive industry quality standards.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Developed optimized PL/SQL scripts for operational data extraction, transformation, and structuring for fleet maintenance reporting (VW Project).</li>
+                                <li>Automated ticket file processing and service tracking for corporate fleet users.</li>
+                                <li>Identified and resolved data inconsistencies across corporate database environments.</li>
+                                <li>Documented key technical processes following automotive industry quality standards.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Desarrollé scripts optimizados para la extracción, transformación y estructuración de datos operativos destinados a reportes de mantenimiento vehicular (Proyecto VW).</li>
+                                <li>Automaticé el procesamiento de archivos de tickets y control de servicios para usuarios de flota empresarial.</li>
+                                <li>Identifiqué y corregí inconsistencias de datos en entornos de base de datos corporativos.</li>
+                                <li>Documenté técnicamente procesos clave bajo estándares de calidad de la industria automotriz.</li>
+                            </ul>
+                        }
                     }
                     else
                     {
-                        <ul>
-                            <li>Desarrollé scripts optimizados para la extracción, transformación y estructuración de datos operativos destinados a reportes de mantenimiento vehicular (Proyecto VW).</li>
-                            <li>Automaticé el procesamiento de archivos de tickets y control de servicios para usuarios de flota empresarial.</li>
-                            <li>Identifiqué y corregí inconsistencias de datos en entornos de base de datos corporativos.</li>
-                            <li>Documenté técnicamente procesos clave bajo estándares de calidad de la industria automotriz.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Managed IT service ticket processing and control for corporate fleet users (VW Project).</li>
+                                <li>Identified, diagnosed and resolved data failures in Oracle SQL Developer environments.</li>
+                                <li>Produced detailed technical documentation of operational processes following international quality standards.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Gestioné el procesamiento y control de tickets de servicio informático para la flota de usuarios empresariales (Proyecto VW).</li>
+                                <li>Identifiqué, diagnosticé y corregí fallas de datos en entornos Oracle SQL Developer.</li>
+                                <li>Elaboré documentación técnica detallada de procesos operativos bajo estándares internacionales de calidad.</li>
+                            </ul>
+                        }
                     }
                 </div>
             </div>
@@ -170,26 +218,48 @@
                 <div class="timeline-card">
                     <div class="timeline-header">
                         <div>
-                            <h4>@(Lang.IsEnglish ? "Software Developer (Professional Internship)" : "Desarrollador de Software (Estadía Profesional)")</h4>
+                            <h4>@(activeRole == 0 ? (Lang.IsEnglish ? "Software Developer (Professional Internship)" : "Desarrollador de Software (Estadía Profesional)") : (Lang.IsEnglish ? "Systems Support & Development" : "Soporte de Sistemas & Desarrollo"))</h4>
                             <p class="company"><i class="fas fa-building"></i> Mulliert S.A. de C.V.</p>
                         </div>
                         <span class="badge-date">@(Lang.IsEnglish ? "May 2022 – Aug 2022" : "May 2022 – Ago 2022")</span>
                     </div>
-                    @if (Lang.IsEnglish)
+                    @if (activeRole == 0)
                     {
-                        <ul>
-                            <li>Designed and built a warehouse management and inventory control system from scratch.</li>
-                            <li>Implemented automated generation of executive PDF reports and material requisitions.</li>
-                            <li>Designed and optimized relational database schemas to ensure high-performance queries.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Designed and built a warehouse management and inventory control system from scratch.</li>
+                                <li>Implemented automated generation of executive PDF reports and material requisitions.</li>
+                                <li>Designed and optimized relational database schemas to ensure high-performance queries.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Diseñé y desarrollé un sistema de gestión de almacén y control de inventarios desde cero.</li>
+                                <li>Implementé la generación automática de reportes ejecutivos en PDF y requisiciones de materiales.</li>
+                                <li>Diseñé y optimicé esquemas de bases de datos relacionales para asegurar consultas de alto rendimiento.</li>
+                            </ul>
+                        }
                     }
                     else
                     {
-                        <ul>
-                            <li>Diseñé y desarrollé un sistema de gestión de almacén y control de inventarios desde cero.</li>
-                            <li>Implementé la generación automática de reportes ejecutivos en PDF y requisiciones de materiales.</li>
-                            <li>Diseñé y optimicé esquemas de bases de datos relacionales para asegurar consultas de alto rendimiento.</li>
-                        </ul>
+                        @if (Lang.IsEnglish)
+                        {
+                            <ul>
+                                <li>Implemented and provided operational support for the warehouse and inventory management system for daily operations.</li>
+                                <li>Diagnosed and resolved failures in data entry processes, automated report generation and requisitions.</li>
+                                <li>Provided direct technical support to operational users for correct platform usage.</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>Implementé y di soporte operativo al sistema de gestión de almacén e inventarios para la operación diaria.</li>
+                                <li>Diagnosticé y resolví fallas en procesos de captura, generación automática de reportes ejecutivos y requisiciones.</li>
+                                <li>Brindé atención y soporte técnico directo a usuarios operativos para el correcto uso de la plataforma.</li>
+                            </ul>
+                        }
                     }
                 </div>
             </div>
@@ -252,47 +322,37 @@
             <!-- IT Support Skills -->
             <div class="skills-grid">
                 <div class="skill-category animate-on-scroll">
-                    <h5><i class="fas fa-code"></i> @(Lang.IsEnglish ? "Languages" : "Lenguajes")</h5>
+                    <h5><i class="fas fa-desktop"></i> @(Lang.IsEnglish ? "Hardware & Maintenance" : "Hardware y Mantenimiento")</h5>
                     <div class="tags">
-                        <span><i class="fab fa-microsoft"></i> C#</span>
-                        <span><i class="fab fa-js-square"></i> JavaScript</span>
-                        <span><i class="fab fa-php"></i> PHP</span>
-                        <span><i class="fab fa-python"></i> Python</span>
-                        <span><i class="fas fa-database"></i> PL/SQL</span>
-                        <span><i class="fas fa-database"></i> SQL</span>
-                        <span><i class="fab fa-html5"></i> HTML5 &amp; CSS3</span>
+                        <span><i class="fas fa-microchip"></i> @(Lang.IsEnglish ? "Assembly & Diagnostics" : "Ensamble y Diagnóstico")</span>
+                        <span><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Preventive/Corrective Maintenance" : "Mantenimiento Preventivo/Correctivo")</span>
+                        <span><i class="fas fa-fan"></i> @(Lang.IsEnglish ? "Airflow Optimization" : "Optimización de Flujo de Aire")</span>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h5><i class="fas fa-headset"></i> @(Lang.IsEnglish ? "IT & Systems" : "Soporte y Sistemas")</h5>
+                    <h5><i class="fas fa-network-wired"></i> @(Lang.IsEnglish ? "Systems & Networks" : "Sistemas y Redes")</h5>
                     <div class="tags">
-                        <span><i class="fas fa-ticket-alt"></i> @(Lang.IsEnglish ? "Ticket Management" : "Gestión de Tickets")</span>
-                        <span><i class="fas fa-desktop"></i> @(Lang.IsEnglish ? "Hardware Diagnostics" : "Diagnóstico de Hardware")</span>
-                        <span><i class="fas fa-network-wired"></i> @(Lang.IsEnglish ? "Network Maintenance" : "Mantenimiento de Redes")</span>
+                        <span><i class="fas fa-network-wired"></i> @(Lang.IsEnglish ? "LAN Network Configuration" : "Configuración de Redes LAN")</span>
+                        <span><i class="fab fa-windows"></i> @(Lang.IsEnglish ? "Windows 10/11 Administration" : "Administración Windows 10/11")</span>
+                        <span><i class="fas fa-laptop"></i> @(Lang.IsEnglish ? "Remote Control Tools" : "Herramientas de Control Remoto")</span>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Databases" : "Bases de Datos")</h5>
+                    <h5><i class="fas fa-database"></i> @(Lang.IsEnglish ? "Systems & Databases" : "Sistemas y Bases de Datos")</h5>
                     <div class="tags">
+                        <span><i class="fas fa-boxes"></i> @(Lang.IsEnglish ? "Inventory/POS Support" : "Soporte a Sistemas Inventario/POS")</span>
                         <span><i class="fas fa-fish"></i> MySQL</span>
                         <span><i class="fab fa-microsoft"></i> MS SQL Server</span>
                         <span><i class="fas fa-database"></i> Oracle PL/SQL</span>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h5><i class="fas fa-tools"></i> @(Lang.IsEnglish ? "Tools & Version Control" : "Herramientas y Control de Versiones")</h5>
+                    <h5><i class="fas fa-headset"></i> @(Lang.IsEnglish ? "Operational Skills" : "Habilidades Operativas")</h5>
                     <div class="tags">
-                        <span><i class="fab fa-git-alt"></i> Git &amp; GitHub</span>
-                        <span><i class="fab fa-github"></i> GitHub Pages</span>
-                        <span><i class="fas fa-code"></i> Visual Studio Code</span>
-                    </div>
-                </div>
-                <div class="skill-category animate-on-scroll">
-                    <h5><i class="fas fa-brain"></i> @(Lang.IsEnglish ? "Soft Skills" : "Habilidades Blandas")</h5>
-                    <div class="tags">
-                        <span><i class="fas fa-tasks"></i> @(Lang.IsEnglish ? "Autonomous Project Management" : "Gestión Autónoma de Proyectos")</span>
-                        <span><i class="fas fa-search"></i> @(Lang.IsEnglish ? "Problem Solving" : "Resolución de Problemas")</span>
-                        <span><i class="fas fa-comments"></i> @(Lang.IsEnglish ? "Async Communication" : "Comunicación Asíncrona")</span>
+                        <span><i class="fas fa-clock"></i> @(Lang.IsEnglish ? "SLA Compliance" : "Atención bajo SLA")</span>
+                        <span><i class="fas fa-ticket-alt"></i> @(Lang.IsEnglish ? "Ticket Management" : "Gestión de Tickets")</span>
+                        <span><i class="fas fa-file-alt"></i> @(Lang.IsEnglish ? "Technical Documentation" : "Documentación Técnica")</span>
+                        <span><i class="fas fa-users"></i> @(Lang.IsEnglish ? "On-site & Remote Support" : "Soporte Presencial y Remoto")</span>
                     </div>
                 </div>
             </div>
